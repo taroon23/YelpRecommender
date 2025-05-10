@@ -33,14 +33,17 @@ The final output is a predicted rating for each user-business pair in the valida
 
 ## 📂 Files Used
 
-| File Name            | Description                                            |
-|---------------------|--------------------------------------------------------|
-| `yelp_train.csv`     | Training data: user_id, business_id, stars             |
-| `yelp_val.csv`       | Validation/test data: user_id, business_id             |
-| `user.json`          | User metadata including compliments, review count etc. |
-| `business.json`      | Business metadata including stars, categories, location, attributes |
-| `YelpHybridRecommender.py` | Main Python script implementing the full hybrid pipeline |
-| `output.csv` | Output file containing predictions for each test pair |
+| File Name                | Description                                                  |
+|-------------------------|--------------------------------------------------------------|
+| `yelp_train.csv`         | Training data: user_id, business_id, stars                   |
+| `yelp_val.csv`           | Validation/test data: user_id, business_id                   |
+| `user_sample.json`       | **Sample** user metadata (original file was too large)       |
+| `business_sample.json`   | **Sample** business metadata (original file was too large)   |
+| `YelpHybridRecommender.py` | Main Python script implementing the full hybrid pipeline     |
+| `output.csv`     | Output file containing predictions for each test pair        |
+
+> ⚠️ Note: The full `user.json` and `business.json` files are too large to upload on GitHub.  
+> Instead, **sample versions** are provided (`user_sample.json`, `business_sample.json`) to demonstrate structure and allow basic testing.
 
 ---
 
@@ -69,7 +72,7 @@ From `business.json`:
 
 ## 📈 Performance
 
-- ✅ **RMSE < 0.97** on validation set  
+- ✅ **RMSE < 0.98** on validation set  
 - ✅ Robust to missing metadata (uses fallback defaults)  
 - ✅ Fast prediction with Spark-based parallelism  
 - ✅ Generalized via bagging over 5 random seeds: `3, 11, 29, 42, 77`
